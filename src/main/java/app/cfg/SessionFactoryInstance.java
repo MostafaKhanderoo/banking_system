@@ -4,13 +4,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class SessionFactoryInstance {
-  public static SessionFactory sessionFactory;
+    public final static SessionFactory sessionFactory;
 
 
-  static {
-    sessionFactory=new Configuration()
-            .configure()
-            .buildSessionFactory();
-  }
+    static {
+        sessionFactory = new Configuration()
+                .configure()
+                .buildSessionFactory();
+    }
 
 }
