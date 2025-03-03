@@ -7,6 +7,8 @@ import app.service.*;
 import app.service.impl.*;
 
 public class ApplicationContext {
+    private ApplicationContext() {
+    }
 
     private static final Class<Account> account;
     private static final AccountRepository accountRepository;
