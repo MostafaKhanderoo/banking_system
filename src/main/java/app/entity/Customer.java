@@ -3,7 +3,6 @@ package app.entity;
 import app.base.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
 import lombok.*;
 
 @Entity
@@ -25,6 +24,5 @@ public class Customer extends BaseEntity<Long> {
     private String username;
     @Column(nullable = false)
     private String password;
-    @OneToOne
-    private CreditCard creditCard;
+
 }
