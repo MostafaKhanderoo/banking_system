@@ -1,25 +1,19 @@
 package app.service;
 
 import app.base.service.BaseService;
+import app.entity.CreditCard;
 import app.entity.Customer;
 
-import java.util.Currency;
-import java.util.List;
 import java.util.Optional;
 
 public interface CustomerService extends BaseService<Long , Customer> {
-    @Override
-    Customer save(Customer customer);
+Optional<Customer> findByNationalCode(String nationalCode);
 
-    @Override
-    Customer update(Customer customer);
+    void userNameCheck(String username);
 
-    @Override
-    List<Customer> findAll();
+    void nationalCodeCheck(String nationalCode);
 
-    @Override
-    Optional<Customer> findById(Long id);
+    void creditCardCheck(Customer customer, CreditCard creditCard);
+    void addCreditCardForCustomer(String nationalCode, CreditCard creditCard);
 
-    @Override
-    void deleteById(Long id);
 }
