@@ -3,6 +3,7 @@ package app.entity;
 import app.base.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -22,5 +23,8 @@ public class CreditCard extends BaseEntity<Long> {
     private String CVV2;
     @Column(nullable = false)
     private  LocalDateTime dataCard;
-
+    @ManyToOne
+    private Customer customer;
+    @ManyToOne
+    private Account account;
 }
