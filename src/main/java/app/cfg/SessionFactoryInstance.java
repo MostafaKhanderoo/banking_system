@@ -18,6 +18,7 @@ public class SessionFactoryInstance {
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Transaction.class)
+                .addAnnotatedClass(AccountTransaction.class)
                 .buildSessionFactory();
     }
 
