@@ -16,7 +16,7 @@ public class Bank extends BaseEntity<Long> {
     @Column(nullable = false)
     private String name;
 @Column(nullable = false ,unique = true)
-    private String branch;
+    private int branch;
 
 @OneToOne
 private Boss boss;
