@@ -39,7 +39,9 @@ public class ApplicationContext {
     private static final TransactionRepository transactionRepository;
     private static final TransactionService transactionService;
 
-
+    private static final Class<AccountTransaction>accountTransaction;
+    private static final AccountTransactionRepository accountTransactionRepository;
+    private static final AccountTransactionService accountTransactionService;
     static {
         account = Account.class;
         accountRepository = new AccountRepositoryImpl(account);
@@ -69,6 +71,10 @@ public class ApplicationContext {
         transaction = Transaction.class;
         transactionRepository = new TransactionRepositoryImpl(transaction);
         transactionService = new TransactionServiceImpl(transactionRepository);
+
+        accountTransaction = AccountTransaction.class;
+        accountTransactionRepository =new AccountTransactionRepositoryImpl(accountTransaction);
+        accountTransactionService = new AccountTransactionServiceImpl(accountTransactionRepository);
     }
     public static AccountService getAccountService(){
         return accountService;
@@ -91,6 +97,7 @@ public class ApplicationContext {
     public  static TransactionService getTransactionService(){
         return transactionService;
     }
+    public static AccountTransactionService getAccountTransactionService(){return accountTransactionService;}
 
 
 }
